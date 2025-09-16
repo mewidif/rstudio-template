@@ -1,0 +1,23 @@
+---
+title: "How to Read This Data"
+format: html
+---
+
+This site was created using RStudio, RMarkdown documents and Github pages. 
+
+#### This is a code chunk:
+
+```{r}
+1 + 1
+```
+##### ^ And this is a tibble.
+
+You can usually ignore code chunks unless you are interested in how we got from a dataset to the final conclusion.
+
+### Reading our findings...
+
+Tibbles are where the information we want lies. You can usually ignore "Setup" and "Cleaning" sections and subheadings. That is when I am going through the data to find what we need from it. Usually, a final analyzed dataset goes from hundreds of thousands or even millions of rows down to a final 50. 
+
+Check at the end of the page for any conclusions or verifications of analyses or data we've looked through.
+
+Enjoy!
