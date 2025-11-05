@@ -1,12 +1,32 @@
 ---
 title: "Home Page or Data Analysis Page"
+author: "Author Name"
 output: html_document
 ---
 
 ## Put anything you want here!
 
+> I recommend that you use this page as a home base for everything to explain your project or link to your other pages.
+
 ### Your first tibble!
 ```{r}
 1 + 1
+```
+
+
+## Setup {.tabset}
+
+### Setup Libraries (Copy/Paste)
+
+```{r}
+#| message: false
+#| label: setup
+
+# This is just a basic setup for analysis -- you can look up any other options and what packages do later!
+
+library(tidyverse)
+library(janitor)
+library(dplyr)
+library(rmarkdown)
 ```
 

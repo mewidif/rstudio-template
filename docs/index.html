@@ -9,6 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Author Name" />
 
 
 <title>Home Page or Data Analysis Page</title>
@@ -33,6 +34,8 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/navigation-1.1/sourceembed.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
@@ -59,6 +62,11 @@ if (window.hljs) {
 
 
 
+<style type="text/css">
+#rmd-source-code {
+  display: none;
+}
+</style>
 
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
@@ -220,6 +228,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -335,22 +346,51 @@ div.tocify {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+<li role="separator" class="divider"></li>
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
+</ul>
+</div>
+
 
 
 <h1 class="title toc-ignore">Home Page or Data Analysis Page</h1>
+<h4 class="author">Author Name</h4>
 
 </div>
 
 
 <div id="put-anything-you-want-here" class="section level2">
 <h2>Put anything you want here!</h2>
+<blockquote>
+<p>I recommend that you use this page as a home base for everything to
+explain your project or link to your other pages.</p>
+</blockquote>
 <div id="your-first-tibble" class="section level3">
 <h3>Your first tibble!</h3>
 <pre class="r"><code>1 + 1</code></pre>
 <pre><code>## [1] 2</code></pre>
 </div>
 </div>
+<div id="setup" class="section level2 tabset">
+<h2 class="tabset">Setup</h2>
+<div id="setup-libraries-copypaste" class="section level3">
+<h3>Setup Libraries (Copy/Paste)</h3>
+<pre class="r"><code># This is just a basic setup for analysis -- you can look up any other options and what packages do later!
 
+library(tidyverse)
+library(janitor)
+library(dplyr)
+library(rmarkdown)</code></pre>
+<pre><code>## Warning: package &#39;rmarkdown&#39; was built under R version 4.5.1</code></pre>
+</div>
+</div>
+
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkhvbWUgUGFnZSBvciBEYXRhIEFuYWx5c2lzIFBhZ2UiDQphdXRob3I6ICJBdXRob3IgTmFtZSINCm91dHB1dDogaHRtbF9kb2N1bWVudA0KLS0tDQoNCiMjIFB1dCBhbnl0aGluZyB5b3Ugd2FudCBoZXJlIQ0KDQo+IEkgcmVjb21tZW5kIHRoYXQgeW91IHVzZSB0aGlzIHBhZ2UgYXMgYSBob21lIGJhc2UgZm9yIGV2ZXJ5dGhpbmcgdG8gZXhwbGFpbiB5b3VyIHByb2plY3Qgb3IgbGluayB0byB5b3VyIG90aGVyIHBhZ2VzLg0KDQojIyMgWW91ciBmaXJzdCB0aWJibGUhDQpgYGB7cn0NCjEgKyAxDQpgYGANCg0KDQojIyBTZXR1cCB7LnRhYnNldH0NCg0KIyMjIFNldHVwIExpYnJhcmllcyAoQ29weS9QYXN0ZSkNCg0KYGBge3J9DQojfCBtZXNzYWdlOiBmYWxzZQ0KI3wgbGFiZWw6IHNldHVwDQoNCiMgVGhpcyBpcyBqdXN0IGEgYmFzaWMgc2V0dXAgZm9yIGFuYWx5c2lzIC0tIHlvdSBjYW4gbG9vayB1cCBhbnkgb3RoZXIgb3B0aW9ucyBhbmQgd2hhdCBwYWNrYWdlcyBkbyBsYXRlciENCg0KbGlicmFyeSh0aWR5dmVyc2UpDQpsaWJyYXJ5KGphbml0b3IpDQpsaWJyYXJ5KGRwbHlyKQ0KbGlicmFyeShybWFya2Rvd24pDQpgYGANCg0K</div>
 
 
 </div>
@@ -386,6 +426,12 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeSourceEmbed("index.Rmd");
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 <script>
 $(document).ready(function ()  {

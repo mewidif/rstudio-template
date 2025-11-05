@@ -12,6 +12,8 @@ navbar:
       
 output:
   html_document:
+    code_folding: hide
+    code_download: true
     df-print: paged
     theme: simplex
     css: styles.css
