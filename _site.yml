@@ -14,7 +14,7 @@ output:
   html_document:
     code_folding: hide
     code_download: true
-    df-print: paged
+    df_print: paged
     theme: simplex
     css: styles.css
     toc: true

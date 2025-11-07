@@ -33,8 +33,12 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/navigation-1.1/sourceembed.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -59,6 +63,11 @@ if (window.hljs) {
 
 
 
+<style type="text/css">
+#rmd-source-code {
+  display: none;
+}
+</style>
 
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
@@ -220,6 +229,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -335,6 +347,16 @@ div.tocify {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+<li role="separator" class="divider"></li>
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
+</ul>
+</div>
+
 
 
 <h1 class="title toc-ignore">How to Read This Data</h1>
@@ -366,6 +388,7 @@ analyses or data we’ve looked through.</p>
 <p>Enjoy!</p>
 </div>
 
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiSG93IHRvIFJlYWQgVGhpcyBEYXRhIgpmb3JtYXQ6IGh0bWwKLS0tCgpUaGlzIHNpdGUgd2FzIGNyZWF0ZWQgdXNpbmcgUlN0dWRpbywgUk1hcmtkb3duIGRvY3VtZW50cyBhbmQgR2l0aHViIHBhZ2VzLiAKCiMjIyMgVGhpcyBpcyBhIGNvZGUgY2h1bms6CgpgYGB7cn0KMSArIDEKYGBgCiMjIyMjIF4gQW5kIHRoaXMgaXMgYSB0aWJibGUuCgpZb3UgY2FuIHVzdWFsbHkgaWdub3JlIGNvZGUgY2h1bmtzIHVubGVzcyB5b3UgYXJlIGludGVyZXN0ZWQgaW4gaG93IHdlIGdvdCBmcm9tIGEgZGF0YXNldCB0byB0aGUgZmluYWwgY29uY2x1c2lvbi4KCiMjIyBSZWFkaW5nIG91ciBmaW5kaW5ncy4uLgoKVGliYmxlcyBhcmUgd2hlcmUgdGhlIGluZm9ybWF0aW9uIHdlIHdhbnQgbGllcy4gWW91IGNhbiB1c3VhbGx5IGlnbm9yZSAiU2V0dXAiIGFuZCAiQ2xlYW5pbmciIHNlY3Rpb25zIGFuZCBzdWJoZWFkaW5ncy4gVGhhdCBpcyB3aGVuIEkgYW0gZ29pbmcgdGhyb3VnaCB0aGUgZGF0YSB0byBmaW5kIHdoYXQgd2UgbmVlZCBmcm9tIGl0LiBVc3VhbGx5LCBhIGZpbmFsIGFuYWx5emVkIGRhdGFzZXQgZ29lcyBmcm9tIGh1bmRyZWRzIG9mIHRob3VzYW5kcyBvciBldmVuIG1pbGxpb25zIG9mIHJvd3MgZG93biB0byBhIGZpbmFsIDUwLiAKCkNoZWNrIGF0IHRoZSBlbmQgb2YgdGhlIHBhZ2UgZm9yIGFueSBjb25jbHVzaW9ucyBvciB2ZXJpZmljYXRpb25zIG9mIGFuYWx5c2VzIG9yIGRhdGEgd2UndmUgbG9va2VkIHRocm91Z2guCgpFbmpveSE=</div>
 
 
 </div>
@@ -401,6 +424,12 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeSourceEmbed("readme.Rmd");
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 <script>
 $(document).ready(function ()  {
